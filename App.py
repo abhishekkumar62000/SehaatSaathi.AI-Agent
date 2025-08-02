@@ -1,15 +1,20 @@
+
 import os
+os.environ["CHROMA_DB_IMPL"] = "duckdb"  # Must be set before any other import
 import streamlit as st
-from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, LLM
 from crewai_tools import SerperDevTool
 from langchain_openai import ChatOpenAI
 
-# Load environment variables
+# Fetch API keys from Streamlit secrets (for Streamlit Cloud) or environment (for local dev)
+def get_secret(key, default=None):
+    try:
+        return st.secrets[key]
+    except Exception:
+        return os.getenv(key, default)
 
-load_dotenv()
-serper_api_key = os.getenv("SERPER_API_KEY")
-openai_api_key = os.getenv("OPENAI_API_KEY")
+serper_api_key = get_secret("SERPER_API_KEY")
+openai_api_key = get_secret("OPENAI_API_KEY")
 if serper_api_key:
     os.environ["SERPER_API_KEY"] = serper_api_key
 if openai_api_key:
