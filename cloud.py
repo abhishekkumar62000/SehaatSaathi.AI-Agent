@@ -1,5 +1,7 @@
 
 import os
+# Fix for ChromaDB sqlite3 version error on Streamlit Cloud
+os.environ["CHROMA_DB_IMPL"] = "duckdb"
 import streamlit as st
 from crewai import Agent, Task, Crew, LLM
 from crewai_tools import SerperDevTool
