@@ -1,5 +1,5 @@
 streamlit
-crewai
-crewai-tools
-langchain-openai
+crewai==0.22.6
+crewai-tools==0.0.8
+langchain-openai==0.0.8
 openai
