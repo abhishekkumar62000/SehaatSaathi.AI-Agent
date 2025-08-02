@@ -3,7 +3,7 @@ import os
 import os
 # For Streamlit Cloud: Do NOT force duckdb backend, let CHROMA_DB_IMPL be set by environment variable.
 # To use ChromaDB on Streamlit Cloud, set CHROMA_DB_IMPL=postgres and provide PostgreSQL credentials in app secrets or environment variables.
-os.environ["CHROMA_DB_IMPL"] = os.getenv("CHROMA_DB_IMPL", "duckdb")  # Default to duckdb if not set
+os.environ["CHROMA_DB_IMPL"] = os.getenv("CHROMA_DB_IMPL", "duckdb")  # Default to duckdb if not set 
 import streamlit as st
 from crewai import Agent, Task, Crew, LLM
 from crewai_tools import SerperDevTool
@@ -652,6 +652,7 @@ def app():
 
 if __name__ == "__main__":
     app()
+
 
 
 
