@@ -140,7 +140,140 @@ This project is production-ready for deployment on **Streamlit Cloud** or any lo
 
 ---
 
-## 👨‍💻 Developed by: [TECHSEVA SOLUTIONS](https://github.com/codewithabhi)
+```markdown
+## 🌳 LangGraph Decision Tree Workflow
+
+The **SehaatSaathi.AI Agent** app uses a LangGraph-based decision tree to coordinate agent tasks and user interactions.
+
+Below is the complete decision flow for the app from start to end:
+
+```
+
+```
+                      ┌─────────────────────┐
+                      │    App Launched     │
+                      └─────────┬───────────┘
+                                │
+                ┌───────────────▼────────────────┐
+                │ User selects: Start New Session│
+                └────────────────┬──────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │    Step 1: Collect Basic Info       │
+              │ (age, gender, height, weight, goals)│
+              └──────────────────┬──────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │  Step 2: Collect Health Details     │
+              │ (conditions, medications, allergies)│
+              └──────────────────┬──────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │ Step 3: Collect Preferences & Style │
+              │ (food likes, dislikes, budget, etc.)│
+              └──────────────────┬──────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │   User clicks "Generate Nutrition Plan" │
+              └──────────────────┬──────────────────┘
+                                 │
+              ┌──────────────────▼──────────────────┐
+              │    LangGraph Workflow Starts        │
+              └──────────────────┬──────────────────┘
+                                 │
+     ┌───────────────────────────┴────────────────────────────┐
+     │                                                        │
+```
+
+┌──────────────┐                                       ┌──────────────────┐
+│ AI Nutritionist│                                       │ Medical Specialist│
+│ Agent generates│                                       │ Agent validates  │
+│ meal plans     │                                       │ for safety       │
+└──────────────┘                                       └──────────────────┘
+│                                                        │
+└───────────────────────────┬───────────────────────────┘
+│
+┌──────────▼──────────┐
+│  Diet Planner Agent │
+│ builds final plan   │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│  Display Results to │
+│      the User       │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ Show Meal Plan, Macros │
+│  Hydration, Analytics  │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ Offer Export Options │
+│ (Markdown download,  │
+│ Email reminders)      │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ User can Chat with  │
+│ AI Nutrition Coach  │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│   End of Workflow   │
+└─────────────────────┘
+
+```
+
+---
+
+## 🧠 How It Works (LangGraph Overview)
+
+The app is built as a **LangGraph workflow** where each step is a node in the graph.  
+The output of one step becomes the input for the next step.
+
+### 🗺️ Nodes:
+- `Input Collection` → User input
+- `AI Nutritionist Agent` → Meal plans
+- `Medical Specialist Agent` → Validation
+- `Diet Planner Agent` → Final plan creation
+- `UI Display Node` → Results shown
+- `Export Node` → User downloads plan or sets reminders
+- `AI Chat Agent` → On-demand Q&A
+
+### 🔄 Transitions:
+- Sequential flow + conditional checks
+- Agents operate asynchronously under CrewAI + LangGraph orchestration
+
+### 💡 Benefits:
+- Modularity: Each step can be extended/replaced
+- Robust: Errors in any node can reroute or retry
+- Reusable for any personalized health/nutrition application
+
+---
+
+## 📝 Summary of LangGraph Usage
+
+SehaatSaathi.AI uses **LangGraph to build a decision tree graph**:
+- Agents as nodes
+- User actions and results as edges
+- Modular, scalable, and easy to maintain
+
+This architecture allows the app to function as a **true multi-agent AI system**.
+
+---
+```
+
+---
+
+This is ready to be **directly copy-pasted into your GitHub `README.md`** under the section:
+👉 `## 🌳 LangGraph Decision Tree Workflow`
+
+
+
+---
+
+## 👨‍💻 Developed by: [TECHSEVA SOLUTIONS](https://github.com/abhishekkumar62000)
 
 > If you like this project, don't forget to ⭐ star the repo and fork it for your own experiments!
 
