@@ -2,7 +2,8 @@ streamlit
 crewai==0.152.0
 crewai-tools==0.55.0
 langchain-openai==0.0.8
-openai 
+openai
+
 
 
 
